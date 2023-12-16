@@ -1,10 +1,44 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../CSS/General.css';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const Rules = () => {
     const { gameMode } = useParams();
+    
+    let ruleItems;
+
+    if(gameMode === "Standard Mode") {
+        ruleItems = (
+            <>
+                <li>No time limit</li>
+                <li>No mismatch count</li>
+                <li>Just play until board is empty</li>
+                <li>Please Have FUN!!</li>
+                ___________________________________________________________________
+            </>
+        );
+    } else if(gameMode === "Timed Mode") {
+        ruleItems = (
+            <>
+                <li>Clear as many cards as possible before the time runs out</li>
+                <li>Every time you clear a board you get extra time</li>
+                <li>3 board sizes, each with different time limits</li>
+                <li>Please Have FUN!!</li>
+                ___________________________________________________________________
+            </>
+        );
+    } else if(gameMode === "Memory Mode") {
+        ruleItems = (
+            <>
+                <li>Remember as much as possible in 5 seconds</li>
+                <li>Make as little mismatches as possible</li>
+                <li>3 board sizes, the bigger the board the harder to remember</li>
+                <li>Please Have FUN!!</li>
+                ___________________________________________________________________
+            </>
+        );
+    }
 
     return (
         <div className="background">
@@ -13,12 +47,9 @@ const Rules = () => {
 
                     <h2 className="text-center text-light border border-5 border-light p-3 ps-4 pe-4 bg-black">{gameMode}</h2>
 
-                    <div className="text-light border border-5 border-light p-3 ps-5 pe-5 bg-black mb-2">
+                    <div className="text-light border border-5 border-light p-3 ps-4 pe-4 bg-black mb-2">
                         <h4 className="text-center">Rules</h4>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <ul>{ruleItems}</ul>
                     </div>
 
                     <div className="text-light border border-5 border-light p-3 ps-4 pe-4 bg-black mb-2">

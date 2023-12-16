@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../CSS/General.css';
 import { Link, useNavigate  } from 'react-router-dom';
 
 const SelectGameMode = () => {
-    const [gameMode, setGameMode] = useState('');
     const navigate  = useNavigate ();
 
     const handleModeSelection = (mode) => {
-        setGameMode(mode);
         navigate(`/Rules/${mode}`);
     };
 
