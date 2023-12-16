@@ -21,7 +21,7 @@ const Game = () => {
 
     return (
         <div className="game">
-        <Board cards={cards} handleCardClick={handleCardClick} />
+            <Board cards={cards} handleCardClick={handleCardClick} />
         </div>
     );
 };

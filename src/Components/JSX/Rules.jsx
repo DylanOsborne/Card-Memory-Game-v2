@@ -32,9 +32,9 @@ const Rules = () => {
                         <h4 className="text-center text-light border border-5 border-light p-2 ps-4 pe-4 bg-black mb-2">Board Sizes</h4>
 
                         <div className='container d-flex justify-content-center'>
-                            <button className='col-3 btn btn-dark border-3 border-light p-2 bg-black me-2 me-sm-1'>Numbers</button>
-                            <button className='col-3 btn btn-dark border-3 border-light p-2 bg-black me-2 me-sm-1 ms-2 ms-sm-1'>Emoji's</button>
-                            <button className='col-3 btn btn-dark border-3 border-light p-2 bg-black ms-2 ms-sm-1'>Colors</button>
+                            <Link to={'/Game'} className='col-3 btn btn-dark border-3 border-light p-2 bg-black me-2 me-sm-1'>Numbers</Link>
+                            <Link to={'/Game'} className='col-3 btn btn-dark border-3 border-light p-2 bg-black me-2 me-sm-1 ms-2 ms-sm-1'>Emoji's</Link>
+                            <Link to={'/Game'} className='col-3 btn btn-dark border-3 border-light p-2 bg-black ms-2 ms-sm-1'>Colors</Link>
                         </div>
                     </div>
                 
