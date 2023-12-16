@@ -10,23 +10,23 @@ const SelectGameMode = () => {
                     
                     <h1 className="text-center text-light border border-5 border-light p-4 ps-5 pe-5 bg-black">Select Mode</h1>
 
-                    <div className="container p-4">
+                    <div className="container p-2">
                         <div className='row justify-content-center'>
                             <div className='col-4'>
-                                <div className="btn btn-dark border-2 border-light bg-black">Timed</div>
+                                <Link to="/" className="mt-4 btn btn-dark border-2 border-light bg-black border-light d-flex align-items-center justify-content-center p-4" role="button">Timed</Link>
                             </div>
 
                             <div className='col-4'>
-                                <div className="btn btn-dark border-2 border-light bg-black">Memory</div>
+                                <Link to="/" className="mt-4 btn btn-dark border-2 border-light bg-black border-light d-flex align-items-center justify-content-center p-4" role="button">Memory</Link>
                             </div>
 
                             <div className='col-4'>
-                                <div className="btn btn-dark border-2 border-light bg-black">Standard</div>
+                                <Link to="/" className="mt-4 btn btn-dark border-2 border-light bg-black border-light d-flex align-items-center justify-content-center p-4" role="button">Standard</Link>
                             </div>
                         </div>
                     </div>
 
-                    <Link to="/SelectGameMode" className="mt-4 btn btn-dark bg-black btn-lg border-5 border-light d-flex align-items-center justify-content-center" role="button">Back</Link>
+                    <Link to="/" className="mt-4 btn btn-dark bg-black btn-lg border-5 border-light d-flex align-items-center justify-content-center" role="button">Back</Link>
                 
                 </div>
             </div>
