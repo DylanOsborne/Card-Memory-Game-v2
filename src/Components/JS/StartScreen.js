@@ -1,10 +1,11 @@
 import React from 'react';
+import '../CSS/General.css';
 
 const StartScreen = () => {
     return (
-        <div className="bg-warning">
+        <div className="background">
             <div className="container d-flex align-items-center justify-content-center vh-100">
-                <div className="border border-5 border-dark p-5 bg bg-primary">
+                <div className="backgroundReverse border border-5 border-dark p-5 bg bg-primary">
                     <div className="text-center text-light border border-5 border-light p-4 bg bg-dark">
                         <h1 className="mb-4">Card Memory Game</h1>
                         <h1 className="mb-4">Welcome</h1>

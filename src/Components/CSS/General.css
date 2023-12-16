@@ -1,0 +1,7 @@
+.background {
+    background-image: linear-gradient(blue, purple, orange);
+}
+
+.backgroundReverse{
+    background-image: linear-gradient(orange, purple, blue);
+}
