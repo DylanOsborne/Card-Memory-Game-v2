@@ -13,11 +13,11 @@ const StartScreen = () => {
                         <h1 className="mb-4">Simple game for all ages</h1>
                     </div>
 
-                    <Link to="/SelectGameMode" className="mt-4 btn btn-dark bg-black btn-lg border-5 border-light d-flex align-items-center justify-content-center" role="button">Continue</Link>
+                    <Link to="/SelectGameMode" className="btn btn-lg d-flex" role="button">Continue</Link>
                 </div>
             </div>
         </div>
     );
-  };
+};
   
   export default StartScreen;

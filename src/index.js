@@ -14,7 +14,7 @@ root.render(
       <Routes>
         <Route path="/" element={<StartScreen />} />
         <Route path="/SelectGameMode" element={<SelectGameMode />} />
-        <Route path="/Rules" element={<Rules />} />
+        <Route path="/Rules/:gameMode?" element={<Rules />} />
         <Route path="/Game" element={<Game />} />
       </Routes>
     </Router>

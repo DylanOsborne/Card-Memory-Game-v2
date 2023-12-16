@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import '../CSS/General.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 
 const SelectGameMode = () => {
     const [gameMode, setGameMode] = useState('');
+    const navigate  = useNavigate ();
 
     const handleModeSelection = (mode) => {
-      setGameMode(mode);
-      // You can perform additional actions based on the selected mode if needed
+        setGameMode(mode);
+        navigate(`/Rules/${mode}`);
     };
 
     return (
@@ -19,24 +20,21 @@ const SelectGameMode = () => {
 
                     <div className="container p-2">
                         <div className='row justify-content-center'>
-                            <div className='col-4'>
-                                <Link to="/Rules" onClick={() => handleModeSelection('timed')} 
-                                className="mt-4 btn btn-dark border-2 border-light bg-black border-light d-flex align-items-center justify-content-center p-4" role="button">Timed</Link>
+                        <div className='col-4'>
+                                <button onClick={() => handleModeSelection('Timed Mode')} className="btn btn-lg d-flex p-4">Timed</button>
                             </div>
 
                             <div className='col-4'>
-                                <Link to="/Rules" onClick={() => handleModeSelection('memory')} 
-                                className="mt-4 btn btn-dark border-2 border-light bg-black border-light d-flex align-items-center justify-content-center p-4" role="button">Memory</Link>
+                                <button onClick={() => handleModeSelection('Memory Mode')} className="btn btn-lg d-flex p-4">Memory</button>
                             </div>
 
                             <div className='col-4'>
-                                <Link to="/Rules" onClick={() => handleModeSelection('standard')} 
-                                className="mt-4 btn btn-dark border-2 border-light bg-black border-light d-flex align-items-center justify-content-center p-4" role="button">Standard</Link>
+                                <button onClick={() => handleModeSelection('Standard Mode')} className="btn btn-lg d-flex p-4">Standard</button>
                             </div>
                         </div>
                     </div>
 
-                    <Link to="/" className="mt-4 btn btn-dark bg-black btn-lg border-5 border-light d-flex align-items-center justify-content-center" role="button">Back</Link>
+                    <Link to="/" className="btn btn-lg d-flex" role="button">Back</Link>
                 
                 </div>
             </div>

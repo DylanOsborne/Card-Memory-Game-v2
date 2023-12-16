@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../CSS/General.css';
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Rules = () => {
+    const { gameMode } = useParams();
+
     return (
         <div className="background">
             <div className="container d-flex align-items-center justify-content-center vh-100">
                 <div className="backgroundReverse border border-5 border-dark p-4 bg bg-primary">
 
-                    <h2 className="text-center text-light border border-5 border-light p-3 ps-4 pe-4 bg-black">Selected Mode</h2>
+                    <h2 className="text-center text-light border border-5 border-light p-3 ps-4 pe-4 bg-black">{gameMode}</h2>
 
-                    <div className="text-light border border-5 border-light p-3 ps-4 pe-4 bg-black mb-2">
+                    <div className="text-light border border-5 border-light p-3 ps-5 pe-5 bg-black mb-2">
                         <h4 className="text-center">Rules</h4>
                         <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
                         <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
@@ -32,17 +35,17 @@ const Rules = () => {
                         <h4 className="text-center text-light border border-5 border-light p-2 ps-4 pe-4 bg-black mb-2">Board Sizes</h4>
 
                         <div className='container d-flex justify-content-center'>
-                            <Link to={'/Game'} className='col-3 btn btn-dark border-3 border-light p-2 bg-black me-2 me-sm-1'>Numbers</Link>
-                            <Link to={'/Game'} className='col-3 btn btn-dark border-3 border-light p-2 bg-black me-2 me-sm-1 ms-2 ms-sm-1'>Emoji's</Link>
-                            <Link to={'/Game'} className='col-3 btn btn-dark border-3 border-light p-2 bg-black ms-2 ms-sm-1'>Colors</Link>
+                            <Link to={'/Game'} className='col-3 btn btn-lg border-3 p-2 me-2 me-sm-1'>3x4</Link>
+                            <Link to={'/Game'} className='col-3 btn btn-lg border-3 p-2 me-2 me-sm-1 ms-2 ms-sm-1'>4x5</Link>
+                            <Link to={'/Game'} className='col-3 btn btn-lg border-3 p-2 ms-2 ms-sm-1'>5x6</Link>
                         </div>
                     </div>
                 
-                    <Link to="/SelectGameMode" className="mt-4 btn btn-dark bg-black btn-lg border-5 border-light d-flex align-items-center justify-content-center" role="button">Back</Link>
+                    <Link to="/SelectGameMode" className="btn btn-lg d-flex" role="button">Back</Link>
                 </div>
             </div>
         </div>
     );
-  };
+};
   
   export default Rules;

@@ -9,3 +9,12 @@
 .black {
     background: black;
 }
+
+.btn {
+    background: black !important;
+    color: white !important;
+    margin-top: 24px !important;
+    border: 5px solid white !important;
+    align-items: center;
+    justify-content: center;
+}
