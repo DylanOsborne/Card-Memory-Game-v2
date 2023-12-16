@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../CSS/General.css';
 import { Link } from 'react-router-dom';
 
 const SelectGameMode = () => {
+    const [gameMode, setGameMode] = useState('');
+
+    const handleModeSelection = (mode) => {
+      setGameMode(mode);
+      // You can perform additional actions based on the selected mode if needed
+    };
+
     return (
         <div className="background">
             <div className="container d-flex align-items-center justify-content-center vh-100">
@@ -13,15 +20,18 @@ const SelectGameMode = () => {
                     <div className="container p-2">
                         <div className='row justify-content-center'>
                             <div className='col-4'>
-                                <Link to="/" className="mt-4 btn btn-dark border-2 border-light bg-black border-light d-flex align-items-center justify-content-center p-4" role="button">Timed</Link>
+                                <Link to="/" onClick={() => handleModeSelection('timed')} 
+                                className="mt-4 btn btn-dark border-2 border-light bg-black border-light d-flex align-items-center justify-content-center p-4" role="button">Timed</Link>
                             </div>
 
                             <div className='col-4'>
-                                <Link to="/" className="mt-4 btn btn-dark border-2 border-light bg-black border-light d-flex align-items-center justify-content-center p-4" role="button">Memory</Link>
+                                <Link to="/" onClick={() => handleModeSelection('memory')} 
+                                className="mt-4 btn btn-dark border-2 border-light bg-black border-light d-flex align-items-center justify-content-center p-4" role="button">Memory</Link>
                             </div>
 
                             <div className='col-4'>
-                                <Link to="/" className="mt-4 btn btn-dark border-2 border-light bg-black border-light d-flex align-items-center justify-content-center p-4" role="button">Standard</Link>
+                                <Link to="/" onClick={() => handleModeSelection('standard')} 
+                                className="mt-4 btn btn-dark border-2 border-light bg-black border-light d-flex align-items-center justify-content-center p-4" role="button">Standard</Link>
                             </div>
                         </div>
                     </div>
