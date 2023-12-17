@@ -2,33 +2,33 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 
 const Board = ({ cards, handleCardClick }) => {
-  const [selectedCards, setSelectedCards] = useState([]);
+    const [selectedCards, setSelectedCards] = useState([]);
+    const [boardCards, setBoardCards] = useState([]);
 
     useEffect(() => {
         // Function to generate cards when the component mounts
         const generateCards = () => {
-            const newCards = [];
-            const maxNumber = cards.length / 2;
-
-            for (let i = 1; i <= cards.length; i++) {
-                let randomNumber;
-                do {
-                    randomNumber = Math.floor(Math.random() * maxNumber) + 1;
-                } while (newCards.filter(card => card.value === randomNumber).length >= 2);
-
-                newCards.push({
-                    id: i,
-                    value: randomNumber,
-                });
-            }
-
-            // You may want to dispatch an action to update the state with the new cards
-            // setCards(newCards);
+          // Your existing logic to generate cards
+    
+          // Assuming cards is a flat array, let's create a 2D array based on the board size
+          const boardSize = { rows: 3, columns: 4 }; // You can get this dynamically based on your requirement
+    
+          const newCards = Array.from({ length: boardSize.rows }, (_, rowIndex) =>
+            Array.from({ length: boardSize.columns }, (_, colIndex) => {
+              const cardIndex = rowIndex * boardSize.columns + colIndex;
+              return {
+                ...cards[cardIndex], // Assuming cards is a flat array of objects
+                id: cardIndex + 1, // Update the card id if needed
+              };
+            })
+          ).flat();
+    
+          setBoardCards(newCards);
         };
-
+    
         // Generate cards when the component mounts
         generateCards();
-    }, [cards]);
+      }, [cards]);
 
     useEffect(() => {
         // Check for matching cards when two cards are selected

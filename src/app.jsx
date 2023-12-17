@@ -13,8 +13,8 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<StartScreen />} />
                 <Route path="/SelectGameMode" element={<SelectGameMode setCardType={setCardType} />}/>
-                <Route path="/Rules/:gameMode?" element={<Rules cardType={cardType} />} />
-                <Route path="/Game" element={<Game cardType={cardType} />} />
+                <Route path="/Rules/:gameMode" element={<Rules cardType={cardType} />} />
+                <Route path="/Game/:cardType/:boardSize" element={<Game />} />
             </Routes>
         </Router>
     );

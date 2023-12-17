@@ -1,11 +1,17 @@
 import React, { useState} from 'react';
 import '../CSS/General.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const Rules = ({ cardType }) => {
     const { gameMode } = useParams();
     const [selectedCardType, setSelectedCardType] = useState(cardType || 'numbers');
+
+    const navigate  = useNavigate ();
+
+    const handleSizeSelection = (size) => {
+        navigate(`/Game/${cardType}/${size}`);
+    };
     
     let ruleItems;
 
@@ -81,9 +87,9 @@ const Rules = ({ cardType }) => {
                         <h4 className="text-center text-light border border-5 border-light p-2 ps-4 pe-4 bg-black mb-2">Board Sizes</h4>
 
                         <div className='container d-flex justify-content-center'>
-                            <Link to={'/Game'} className='col-3 btn btn-lg border-3 p-2 me-2 me-sm-1'>3x4</Link>
-                            <Link to={'/Game'} className='col-3 btn btn-lg border-3 p-2 me-2 me-sm-1 ms-2 ms-sm-1'>4x5</Link>
-                            <Link to={'/Game'} className='col-3 btn btn-lg border-3 p-2 ms-2 ms-sm-1'>5x6</Link>
+                            <button onClick={() => handleSizeSelection('3x4')} className='col-3 btn btn-lg border-3 p-2 me-2 me-sm-1'>3x4</button>
+                            <button onClick={() => handleSizeSelection('4x5')} className='col-3 btn btn-lg border-3 p-2 me-2 me-sm-1 ms-2 ms-sm-1'>4x5</button>
+                            <button onClick={() => handleSizeSelection('5x6')} className='col-3 btn btn-lg border-3 p-2 ms-2 ms-sm-1'>5x6</button>
                         </div>
                     </div>
                 

@@ -14,9 +14,12 @@ const Card = ({ id, value, isFlipped, onClick }) => {
     }, [id]);
 
     return (
-        <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={handleClick}>
-            {isFlipped ? value : 'Back of Card'}
+        <div className='container border border-light bg-dark'>
+            <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={handleClick}>
+                {isFlipped ? value : 'Back of Card'}
+            </div>
         </div>
+        
     );
 };
 
