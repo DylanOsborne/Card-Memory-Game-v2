@@ -67,12 +67,24 @@ const Game = ({ cardType, boardSize }) => {
     }, [cardType, boardSize]);
 
     const handleCardClick = (cardId, cardValue) => {
-    setSelectedCards((prevSelected) => [...prevSelected, { id: cardId, value: cardValue }]);
+        setSelectedCards((prevSelected) => [...prevSelected, { id: cardId, value: cardValue }]);
     };
 
     return (
-        <div className="game">
-            <Board cards={cards} handleCardClick={handleCardClick} />
+        <div className='background vh-100 '>
+            <div className="container">
+                <div className="game border border-light border-5 backgroundReverse ">
+                    <Board cards={cards} handleCardClick={handleCardClick} />
+                </div>
+            </div>
+
+            <div className="container mt-5">
+                <div className='game_bar border border-light border-5 backgroundReverse'>
+                    <button className='btn btn-lg p-4 m-4'>Back</button>
+                    <button className='btn btn-lg p-4 m-4'>Start Game</button>
+                </div>
+
+            </div>
         </div>
     );
 };

@@ -87,17 +87,17 @@ const Rules = ({ cardType }) => {
                         <h4 className="text-center text-light border border-5 border-light p-2 ps-4 pe-4 bg-black mb-2">Board Sizes</h4>
 
                         <div className='container d-flex justify-content-center'>
-                            <button onClick={() => handleSizeSelection('3x4')} className='col-3 btn btn-lg border-3 p-2 me-2 me-sm-1'>3x4</button>
-                            <button onClick={() => handleSizeSelection('4x5')} className='col-3 btn btn-lg border-3 p-2 me-2 me-sm-1 ms-2 ms-sm-1'>4x5</button>
-                            <button onClick={() => handleSizeSelection('5x6')} className='col-3 btn btn-lg border-3 p-2 ms-2 ms-sm-1'>5x6</button>
+                            <button onClick={() => handleSizeSelection('3x4')} className='col-3 btn btn-lg border-3 p-2 me-2 me-sm-1 mt-3'>3x4</button>
+                            <button onClick={() => handleSizeSelection('4x5')} className='col-3 btn btn-lg border-3 p-2 me-2 me-sm-1 ms-2 ms-sm-1 mt-3'>4x5</button>
+                            <button onClick={() => handleSizeSelection('5x6')} className='col-3 btn btn-lg border-3 p-2 ms-2 ms-sm-1 mt-3'>5x6</button>
                         </div>
                     </div>
                 
-                    <Link to="/SelectGameMode" className="btn btn-lg d-flex" role="button">Back</Link>
+                    <Link to="/SelectGameMode" className="btn btn-lg d-flex mt-4" role="button">Back</Link>
                 </div>
             </div>
         </div>
     );
 };
   
-  export default Rules;
+export default Rules;

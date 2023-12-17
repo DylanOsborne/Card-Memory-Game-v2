@@ -13,7 +13,7 @@ const SelectGameMode = ({ setCardType }) => {
     return (
         <div className="background">
             <div className="container d-flex align-items-center justify-content-center vh-100">
-                <div className="backgroundReverse border border-5 border-dark p-5 bg bg-primary">
+                <div className="backgroundReverse border border-5 border-dark p-4 bg bg-primary">
                     
                     <h1 className="text-center text-light border border-5 border-light p-4 ps-5 pe-5 bg-black">Select Mode</h1>
 
@@ -27,7 +27,7 @@ const SelectGameMode = ({ setCardType }) => {
                         </div>
                     </div>
 
-                    <Link to="/" className="btn btn-lg d-flex" role="button">Back</Link>
+                    <Link to="/" className="btn btn-lg d-flex mt-4" role="button">Back</Link>
                 
                 </div>
             </div>
@@ -35,4 +35,4 @@ const SelectGameMode = ({ setCardType }) => {
     );
 };
   
-  export default SelectGameMode;
+export default SelectGameMode;

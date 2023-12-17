@@ -49,18 +49,16 @@ const Board = ({ cards, handleCardClick }) => {
     }, [selectedCards]);
 
     return (
-        <div className='container justify-content-center bg-dark'>
-            <div className="board">
-                {cards.map((card) => (
-                    <Card
-                        key={card.id}
-                        id={card.id}
-                        value={card.value}
-                        isFlipped={selectedCards.some((selected) => selected.id === card.id)}
-                        onClick={() => handleCardClick(card.id, card.value)}
-                    />
-                ))}
-            </div>
+        <div className="board row row-cols-5 justify-content-center">
+            {boardCards.map((card) => (
+                <Card
+                    key={card.id}
+                    id={card.id}
+                    value={card.value}
+                    isFlipped={selectedCards.some((selected) => selected.id === card.id)}
+                    onClick={() => handleCardClick(card.id, card.value)}
+                />
+            ))}
         </div>
     );
 };

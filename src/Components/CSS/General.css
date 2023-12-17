@@ -13,7 +13,5 @@
 .btn {
     background: black !important;
     color: white !important;
-    margin-top: 24px !important;
     border: 5px solid white !important;
-    justify-content: center !important;
 }
