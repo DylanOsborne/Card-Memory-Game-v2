@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState} from 'react';
 import '../CSS/General.css';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const Rules = () => {
     const { gameMode } = useParams();
+    const [cardType, setCardType] = useState('numbers');
     
     let ruleItems;
 
@@ -56,9 +57,23 @@ const Rules = () => {
                         <h4 className="text-center">Please Select</h4>
 
                         <div className='container d-flex justify-content-center'>
-                            <input className='col-2' type='radio' name='cardType'/>Numbers
-                            <input className='col-2' type='radio' name='cardType'/>Emoji's
-                            <input className='col-2' type='radio' name='cardType'/>Colors
+                            <input className='col-2' 
+                            type='radio' 
+                            name='cardType' 
+                            defaultChecked={!cardType || cardType === 'numbers'} 
+                            onChange={() => setCardType('numbers')}/>Numbers
+
+                            <input className='col-2' 
+                            type='radio' 
+                            name='cardType' 
+                            defaultChecked={cardType === 'emojis'} 
+                            onChange={() => setCardType('emojis')}/>Emoji's
+
+                            <input className='col-2' 
+                            type='radio' 
+                            name='cardType' 
+                            defaultChecked={cardType === 'colors'} 
+                            onChange={() => setCardType('colors')}/>Colors
                         </div>
                     </div>
 

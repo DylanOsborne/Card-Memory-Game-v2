@@ -18,11 +18,11 @@ const SelectGameMode = () => {
 
                     <div className="container p-2">
                         <div className='row justify-content-center'>
-                                <button onClick={() => handleModeSelection('Timed Mode')} className="btn col-4 mt-2 btn-lg btn-block p-4 me-1 btn">Timed</button>
+                            <button onClick={() => handleModeSelection('Timed Mode')} className="btn col-4 mt-2 btn-lg btn-block p-4 me-1 btn">Timed</button>
 
-                                <button onClick={() => handleModeSelection('Memory Mode')} className="btn col-4 mt-2 btn-lg btn-block p-4 me-1 ms-1">Memory</button>
+                            <button onClick={() => handleModeSelection('Memory Mode')} className="btn col-4 mt-2 btn-lg btn-block p-4 me-1 ms-1">Memory</button>
 
-                                <button onClick={() => handleModeSelection('Standard Mode')} className="btn col-4 mt-2 btn-lg btn-block p-4 ms-1">Standard</button>
+                            <button onClick={() => handleModeSelection('Standard Mode')} className="btn col-4 mt-2 btn-lg btn-block p-4 ms-1">Standard</button>
                         </div>
                     </div>
 
@@ -32,6 +32,6 @@ const SelectGameMode = () => {
             </div>
         </div>
     );
-  };
+};
   
   export default SelectGameMode;
