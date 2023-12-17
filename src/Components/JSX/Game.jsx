@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../CSS/General.css';
 import Board from './Board';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const Game = ({ selectedCardType, boardSize, gameMode }) => {
+const Game = ({ selectedCardType, boardSize }) => {
+    const { gameMode } = useParams();
     const [cards, setCards] = useState([]);
     const [selectedCards, setSelectedCards] = useState([]);
 

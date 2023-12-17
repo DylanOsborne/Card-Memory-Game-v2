@@ -1,8 +1,11 @@
 import React, { useState} from 'react';
 import '../CSS/General.css';
 import { Link, useNavigate  } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-const Rules = ({ gameMode }) => {
+const Rules = () => {
+    const { gameMode } = useParams();
+
     const [selectedCardType, setSelectedCardType] = useState('numbers');
 
     const navigate  = useNavigate ();
