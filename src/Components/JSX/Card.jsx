@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import '../CSS/General.css';
 
 const Card = ({ id, value, isFlipped, onClick }) => {
     const handleClick = () => {

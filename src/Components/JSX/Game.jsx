@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../CSS/General.css';
 import Board from './Board';
 
 const Game = ({ cardType, boardSize }) => {
@@ -71,19 +72,19 @@ const Game = ({ cardType, boardSize }) => {
     };
 
     return (
-        <div className='background vh-100 '>
-            <div className="container">
-                <div className="game border border-light border-5 backgroundReverse ">
+        <div className='background vh-100'>
+            <div className="container border border-light border-5 backgroundReverse mt-5">
+                <div className="game">
                     <Board cards={cards} handleCardClick={handleCardClick} />
                 </div>
             </div>
 
-            <div className="container mt-5">
-                <div className='game_bar border border-light border-5 backgroundReverse'>
-                    <button className='btn btn-lg p-4 m-4'>Back</button>
-                    <button className='btn btn-lg p-4 m-4'>Start Game</button>
+            <div className="container mt-5 fixed-bottom position-fixed border border-light border-5 backgroundReverse">
+                <div className='game_bar d-flex justify-content-center'>
+                    <button className='btn btn-lg p-4 m-4 col-3'>Back</button>
+                    <button className='btn btn-lg p-4 m-4 col-3'>Start Game</button>
+                    <h1 className='btn btn-lg p-4 m-4 col-5'>Text</h1>
                 </div>
-
             </div>
         </div>
     );

@@ -1,13 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
 .background {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     background-image: linear-gradient(blue, purple, orange);
 }
 
-.backgroundReverse{
+.backgroundReverse {
     background-image: linear-gradient(orange, purple, blue);
 }
 
 .black {
     background: black;
+    color: white;
 }
 
 .btn {
