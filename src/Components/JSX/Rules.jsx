@@ -3,9 +3,9 @@ import '../CSS/General.css';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-const Rules = () => {
+const Rules = ({ cardType }) => {
     const { gameMode } = useParams();
-    const [cardType, setCardType] = useState('numbers');
+    const [selectedCardType, setSelectedCardType] = useState(cardType || 'numbers');
     
     let ruleItems;
 
@@ -61,19 +61,19 @@ const Rules = () => {
                             type='radio' 
                             name='cardType' 
                             defaultChecked={!cardType || cardType === 'numbers'} 
-                            onChange={() => setCardType('numbers')}/>Numbers
+                            onChange={() => setSelectedCardType('numbers')}/>Numbers
 
                             <input className='col-2' 
                             type='radio' 
                             name='cardType' 
                             defaultChecked={cardType === 'emojis'} 
-                            onChange={() => setCardType('emojis')}/>Emoji's
+                            onChange={() => setSelectedCardType('emojis')}/>Emoji's
 
                             <input className='col-2' 
                             type='radio' 
                             name='cardType' 
                             defaultChecked={cardType === 'colors'} 
-                            onChange={() => setCardType('colors')}/>Colors
+                            onChange={() => setSelectedCardType('colors')}/>Colors
                         </div>
                     </div>
 

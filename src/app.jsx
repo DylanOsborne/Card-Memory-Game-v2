@@ -8,16 +8,16 @@ import Game from './Components/JSX/Game';
 const App = () => {
     const [cardType, setCardType] = useState('numbers');
 
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<StartScreen />} />
-        <Route path="/SelectGameMode" element={<SelectGameMode setCardType={setCardType} />}/>
-        <Route path="/Rules/:gameMode?" element={<Rules cardType={cardType} />} />
-        <Route path="/Game" element={<Game cardType={cardType} />} />
-      </Routes>
-    </Router>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<StartScreen />} />
+                <Route path="/SelectGameMode" element={<SelectGameMode setCardType={setCardType} />}/>
+                <Route path="/Rules/:gameMode?" element={<Rules cardType={cardType} />} />
+                <Route path="/Game" element={<Game cardType={cardType} />} />
+            </Routes>
+        </Router>
+    );
 };
 
 export default App;

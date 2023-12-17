@@ -2,10 +2,11 @@ import React from 'react';
 import '../CSS/General.css';
 import { Link, useNavigate  } from 'react-router-dom';
 
-const SelectGameMode = () => {
+const SelectGameMode = ({ setCardType }) => {
     const navigate  = useNavigate ();
 
     const handleModeSelection = (mode) => {
+        setCardType('numbers'); 
         navigate(`/Rules/${mode}`);
     };
 
