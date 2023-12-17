@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import '../CSS/General.css';
 import Board from './Board';
+import { useNavigate  } from 'react-router-dom';
 
-const Game = ({ cardType, boardSize }) => {
+const Game = ({ selectedCardType, boardSize, gameMode }) => {
     const [cards, setCards] = useState([]);
     const [selectedCards, setSelectedCards] = useState([]);
+
+    const navigate  = useNavigate ();
+
+    const back = () => {
+        navigate(`/Rules/${gameMode}`);
+    };
 
     useEffect(() => {
         
@@ -32,7 +39,7 @@ const Game = ({ cardType, boardSize }) => {
             }
     
           
-            switch (cardType) {
+            switch (selectedCardType) {
                 case 'numbers':
                     newCards = Array.from({ length: totalCards }, (_, index) => ({
                         id: index + 1,
@@ -65,7 +72,7 @@ const Game = ({ cardType, boardSize }) => {
         };
     
         fetchCards();
-    }, [cardType, boardSize]);
+    }, [selectedCardType, boardSize]);
 
     const handleCardClick = (cardId, cardValue) => {
         setSelectedCards((prevSelected) => [...prevSelected, { id: cardId, value: cardValue }]);
@@ -81,7 +88,7 @@ const Game = ({ cardType, boardSize }) => {
 
             <div className="container mt-5 fixed-bottom position-fixed border border-light border-5 backgroundReverse">
                 <div className='game_bar d-flex justify-content-center'>
-                    <button className='btn btn-lg p-4 m-4 col-3'>Back</button>
+                    <button onClick={() => back()} className='btn btn-lg p-4 m-4 col-3'>Back</button>
                     <button className='btn btn-lg p-4 m-4 col-3'>Start Game</button>
                     <h1 className='btn btn-lg p-4 m-4 col-5'>Text</h1>
                 </div>

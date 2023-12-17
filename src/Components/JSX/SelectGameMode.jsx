@@ -2,12 +2,11 @@ import React from 'react';
 import '../CSS/General.css';
 import { Link, useNavigate  } from 'react-router-dom';
 
-const SelectGameMode = ({ setCardType }) => {
+const SelectGameMode = () => {
     const navigate  = useNavigate ();
 
-    const handleModeSelection = (mode) => {
-        setCardType('numbers'); 
-        navigate(`/Rules/${mode}`);
+    const handleModeSelection = (gameMode) => {
+        navigate(`/Rules/${gameMode}`);
     };
 
     return (
@@ -15,7 +14,7 @@ const SelectGameMode = ({ setCardType }) => {
             <div className="container d-flex align-items-center justify-content-center vh-100">
                 <div className="backgroundReverse border border-5 border-dark p-4 bg bg-primary">
                     
-                    <h1 className="text-center text-light border border-5 border-light p-4 ps-5 pe-5 bg-black">Select Mode</h1>
+                    <h1 className="text-center text-light border border-5 border-light p-4 ps-5 pe-5 bg-black">Select Game Mode</h1>
 
                     <div className="container p-2">
                         <div className='row justify-content-center'>

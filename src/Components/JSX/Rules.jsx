@@ -1,16 +1,14 @@
 import React, { useState} from 'react';
 import '../CSS/General.css';
 import { Link, useNavigate  } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
 
-const Rules = ({ cardType }) => {
-    const { gameMode } = useParams();
-    const [selectedCardType, setSelectedCardType] = useState(cardType || 'numbers');
+const Rules = ({ gameMode }) => {
+    const [selectedCardType, setSelectedCardType] = useState('numbers');
 
     const navigate  = useNavigate ();
 
     const handleSizeSelection = (size) => {
-        navigate(`/Game/${cardType}/${size}`);
+        navigate(`/Game/${selectedCardType}/${size}/${gameMode}`);
     };
     
     let ruleItems;
@@ -66,19 +64,19 @@ const Rules = ({ cardType }) => {
                             <input className='col-2' 
                             type='radio' 
                             name='cardType' 
-                            defaultChecked={!cardType || cardType === 'numbers'} 
+                            defaultChecked={!selectedCardType || selectedCardType === 'numbers'} 
                             onChange={() => setSelectedCardType('numbers')}/>Numbers
 
                             <input className='col-2' 
                             type='radio' 
                             name='cardType' 
-                            defaultChecked={cardType === 'emojis'} 
+                            defaultChecked={selectedCardType === 'emojis'} 
                             onChange={() => setSelectedCardType('emojis')}/>Emoji's
 
                             <input className='col-2' 
                             type='radio' 
                             name='cardType' 
-                            defaultChecked={cardType === 'colors'} 
+                            defaultChecked={selectedCardType === 'colors'} 
                             onChange={() => setSelectedCardType('colors')}/>Colors
                         </div>
                     </div>
