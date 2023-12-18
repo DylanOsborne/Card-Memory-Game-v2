@@ -3,8 +3,8 @@ import '../CSS/General.css';
 import Board from './Board';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const Game = ({ selectedCardType }) => {
-    const { gameMode, boardSize } = useParams(); 
+const Game = () => {
+    const { gameMode, boardSize, selectedCardType } = useParams(); 
     
     const [cards, setCards] = useState([]);
 
@@ -39,35 +39,49 @@ const Game = ({ selectedCardType }) => {
                 totalCards = 12; 
             }
     
-          
+            let values;
+
             switch (selectedCardType) {
+
                 case 'numbers':
-                    newCards = Array.from({ length: totalCards }, (_, index) => ({
-                        id: index + 1,
-                        value: String(index + 1),
-                    }));
+                    values = Array.from({ length: totalCards / 2 }, (_, index) => String(index + 1));
+
+                    console.log(values);
+
+                    newCards = values.flatMap((value, index) => [
+                        { id: index + 1, value, pairId: index + 1 },
+                        { id: index + totalCards / 2 + 1, value, pairId: index + 1 },
+                    ]);
                 break;
 
                 case 'emojis':
-                    newCards = Array.from({ length: totalCards }, (_, index) => ({
+                    newCards = Array.from({ length: totalCards/2 }, (_, index) => ({
                         id: index + 1,
                         value: '😊',
                     }));
                 break;
 
                 case 'colors':
-                    newCards = Array.from({ length: totalCards }, (_, index) => ({
+                    newCards = Array.from({ length: totalCards/2 }, (_, index) => ({
                         id: index + 1,
                         value: 'Red',
                     }));
                 break;
 
                 default:
-                newCards = Array.from({ length: totalCards }, (_, index) => ({
-                    id: index + 1,
-                    value: String(index + 1),
-                }));
+                values = Array.from({ length: totalCards / 2 }, (_, index) => String(index + 1));
+
+                console.log(values);
+
+                newCards = values.flatMap((value, index) => [
+                    { id: index + 1, value, pairId: index + 1 },
+                    { id: index + totalCards / 2 + 1, value, pairId: index + 1 },
+                ]);
             }
+
+            newCards.sort(() => Math.random() - 0.5);
+
+            console.log(newCards);
 
             setCards(newCards);
         };

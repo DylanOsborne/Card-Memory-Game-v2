@@ -20,7 +20,7 @@ const Board = ({ cards, boardSize }) => {
         break;
 
         case '4x5':
-        boardS = { rows: 4, columns: 5 };
+        boardS = { rows: 5, columns: 4 };
         break;
 
         default:
