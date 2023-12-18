@@ -7,7 +7,6 @@ const Game = ({ selectedCardType }) => {
     const { gameMode, boardSize } = useParams(); 
     
     const [cards, setCards] = useState([]);
-    const [selectedCards, setSelectedCards] = useState([]);
 
     const navigate  = useNavigate ();
 
