@@ -46,8 +46,6 @@ const Game = () => {
                 case 'numbers':
                     values = Array.from({ length: totalCards / 2 }, (_, index) => String(index + 1));
 
-                    console.log(values);
-
                     newCards = values.flatMap((value, index) => [
                         { id: index + 1, value, pairId: index + 1 },
                         { id: index + totalCards / 2 + 1, value, pairId: index + 1 },
@@ -55,10 +53,14 @@ const Game = () => {
                 break;
 
                 case 'emojis':
-                    newCards = Array.from({ length: totalCards/2 }, (_, index) => ({
-                        id: index + 1,
-                        value: '😊',
-                    }));
+                    const emojis = ['😊', '❤️', '☀️', '🍎', '🎉', '🐱', '🌈', '🚀', '🎸', '🍕'];
+
+                    emojis.sort(() => Math.random() - 0.5);
+
+                    newCards = emojis.flatMap((emoji, index) => [
+                        { id: index + 1, value: emoji },
+                        { id: index + totalCards / 2 + 1, value: emoji },
+                    ]);
                 break;
 
                 case 'colors':
@@ -80,8 +82,6 @@ const Game = () => {
             }
 
             newCards.sort(() => Math.random() - 0.5);
-
-            console.log(newCards);
 
             setCards(newCards);
         };
