@@ -76,15 +76,11 @@ const Game = ({ selectedCardType }) => {
         fetchCards();
     }, [selectedCardType, boardSize]);
 
-    const handleCardClick = (cardId, cardValue) => {
-        setSelectedCards((prevSelected) => [...prevSelected, { id: cardId, value: cardValue }]);
-    };
-
     return (
         <div className='background vh-100'>
             <div className="container border border-light border-5 backgroundReverse mt-5">
                 <div className="game">
-                    <Board cards={cards} handleCardClick={handleCardClick} boardSize={boardSize} />
+                    <Board cards={cards} boardSize={boardSize} />
                 </div>
             </div>
 
