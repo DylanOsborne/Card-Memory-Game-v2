@@ -3,8 +3,9 @@ import '../CSS/General.css';
 import Board from './Board';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const Game = ({ selectedCardType, boardSize }) => {
-    const { gameMode } = useParams();
+const Game = ({ selectedCardType }) => {
+    const { gameMode, boardSize } = useParams(); 
+    
     const [cards, setCards] = useState([]);
     const [selectedCards, setSelectedCards] = useState([]);
 
@@ -27,16 +28,16 @@ const Game = ({ selectedCardType, boardSize }) => {
                     totalCards = 3 * 4;
                 break;
 
+                case '4x4':
+                    totalCards = 4 * 4;
+                break;
+
                 case '4x5':
                     totalCards = 4 * 5;
                 break;
-
-                case '5x6':
-                    totalCards = 5 * 6;
-                break;
                 
                 default:
-                totalCards = 20;
+                totalCards = 12; 
             }
     
           
@@ -83,7 +84,7 @@ const Game = ({ selectedCardType, boardSize }) => {
         <div className='background vh-100'>
             <div className="container border border-light border-5 backgroundReverse mt-5">
                 <div className="game">
-                    <Board cards={cards} handleCardClick={handleCardClick} />
+                    <Board cards={cards} handleCardClick={handleCardClick} boardSize={boardSize} />
                 </div>
             </div>
 

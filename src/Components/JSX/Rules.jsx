@@ -89,8 +89,8 @@ const Rules = () => {
 
                         <div className='container d-flex justify-content-center'>
                             <button onClick={() => handleSizeSelection('3x4')} className='col-3 btn btn-lg border-3 p-2 me-2 me-sm-1 mt-3'>3x4</button>
-                            <button onClick={() => handleSizeSelection('4x5')} className='col-3 btn btn-lg border-3 p-2 me-2 me-sm-1 ms-2 ms-sm-1 mt-3'>4x5</button>
-                            <button onClick={() => handleSizeSelection('5x6')} className='col-3 btn btn-lg border-3 p-2 ms-2 ms-sm-1 mt-3'>5x6</button>
+                            <button onClick={() => handleSizeSelection('4x4')} className='col-3 btn btn-lg border-3 p-2 me-2 me-sm-1 ms-2 ms-sm-1 mt-3'>4x4</button>
+                            <button onClick={() => handleSizeSelection('4x5')} className='col-3 btn btn-lg border-3 p-2 ms-2 ms-sm-1 mt-3'>4x5</button>
                         </div>
                     </div>
                 
