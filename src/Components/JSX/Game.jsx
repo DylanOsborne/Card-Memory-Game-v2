@@ -64,10 +64,14 @@ const Game = () => {
                 break;
 
                 case 'colors':
-                    newCards = Array.from({ length: totalCards/2 }, (_, index) => ({
-                        id: index + 1,
-                        value: 'Red',
-                    }));
+                    const colors = ['🟥', '🟧', '🟨', '🟩', '🟦', '🟪', '🟫', '⬛', '⬜', '🟥'];
+
+                    colors.sort(() => Math.random() - 0.5);
+
+                    newCards = colors.flatMap((color, index) => [
+                        { id: index + 1, value: color },
+                        { id: index + totalCards / 2 + 1, value: color },
+                    ]);
                 break;
 
                 default:
